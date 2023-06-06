@@ -7,6 +7,7 @@ import getReservations from "@/app/actions/getReservations";
 
 import TripsClient from "./TripsClient";
 
+// Trips route, displays all reservation (previous and current) made by the logged in user and if there are none show empty message
 const TripsPage = async () => {
     const currentUser = await getCurrentUser();
 

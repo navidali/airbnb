@@ -8,6 +8,7 @@ const formattedCountries = countries.map((country) => ({
     region: country.region,
 }));
 
+// Return function to get all available countries and countries by specific value
 const useCountries = () => {
     const getAll = () => formattedCountries;
 

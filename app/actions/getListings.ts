@@ -11,6 +11,7 @@ export interface IListingsParams {
     category?: string;
 }
 
+// define prisma action to get all listings based on the set parameters
 export default async function getListings(
     params: IListingsParams
 ) {
@@ -26,6 +27,7 @@ export default async function getListings(
             category,
         } = params;
 
+        // query by the all possible values given above
         let query: any = {};
 
         if (userId) {
@@ -58,6 +60,7 @@ export default async function getListings(
             query.locationValue = locationValue;
         }
 
+        // listings that don't have reservation within the start and end dates
         if (startDate && endDate) {
             query.NOT = {
                 reservations: {
@@ -77,6 +80,7 @@ export default async function getListings(
             }
         }
 
+        // return all listings that fit within the given parameters above
         const listings = await prisma.listing.findMany({
             where: query,
             orderBy: {
@@ -84,6 +88,7 @@ export default async function getListings(
             }
         });
 
+        // sanatize listings into strings
         const safeListings = listings.map((listing) => ({
             ...listing,
             createdAt: listing.createdAt.toISOString(),

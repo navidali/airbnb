@@ -6,6 +6,7 @@ interface SearchModalStore {
     onClose: () => void;
 }
 
+// Returns functions and state to toggle navbar search modal
 const useSearchModal = create<SearchModalStore>((set) => ({
     isOpen: false,
     onOpen: () => set({ isOpen: true }),

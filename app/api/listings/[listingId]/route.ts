@@ -7,6 +7,7 @@ interface IParams {
     listingId?: string;
 }
 
+// Delete route for when the user chooses to delete their listing
 export async function DELETE(
     request: Request,
     { params }: { params: IParams }

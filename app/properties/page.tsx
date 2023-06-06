@@ -7,6 +7,7 @@ import getListings from "@/app/actions/getListings";
 
 import PropertiesClient from "./PropertiesClient";
 
+// Properties route, displays all properties made by the logged in user and if there are none show empty message
 const PropertiesPage = async () => {
     const currentUser = await getCurrentUser();
 

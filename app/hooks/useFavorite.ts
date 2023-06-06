@@ -12,6 +12,7 @@ interface IUseFavorite {
     currentUser?: SafeUser | null
 }
 
+// Returns favorite array and toggle favorite function
 const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
     const router = useRouter();
 

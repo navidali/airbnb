@@ -7,6 +7,7 @@ export async function getSession() {
     return await getServerSession(authOptions)
 }
 
+// define prisma action to get the current user based on login id
 export default async function getCurrentUser() {
     try {
         const session = await getSession();
@@ -25,6 +26,7 @@ export default async function getCurrentUser() {
             return null;
         }
 
+        // return User object in to readable strings
         return {
             ...currentUser,
             createdAt: currentUser.createdAt.toISOString(),
@@ -32,6 +34,7 @@ export default async function getCurrentUser() {
             emailVerified:
                 currentUser.emailVerified?.toISOString() || null,
         };
+        // if user cannot be found throw an error
     } catch (error: any) {
         return null;
     }

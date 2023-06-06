@@ -1,5 +1,6 @@
 import { Listing, Reservation, User } from "@prisma/client";
 
+// Santatized our database objects to easily manipulate as strings
 export type SafeListing = Omit<Listing, "createdAt"> & {
     createdAt: string;
 };

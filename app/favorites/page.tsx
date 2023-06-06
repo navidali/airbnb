@@ -7,6 +7,7 @@ import getFavoriteListings from "@/app/actions/getFavoriteListings";
 
 import FavoritesClient from "./FavoritesClient";
 
+// Favorite's route, displays all favorited listings and if there are none shows an empty message.
 const ListingPage = async () => {
     const listings = await getFavoriteListings();
     const currentUser = await getCurrentUser();

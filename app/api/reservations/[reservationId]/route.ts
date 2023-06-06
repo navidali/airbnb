@@ -7,6 +7,7 @@ interface IParams {
     reservationId?: string;
 }
 
+// Delete route allows for user and listing owner to remove reservations
 export async function DELETE(
     request: Request,
     { params }: { params: IParams }

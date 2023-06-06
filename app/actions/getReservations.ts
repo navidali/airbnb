@@ -6,6 +6,7 @@ interface IParams {
     authorId?: string;
 }
 
+// define prisma action to get all reservations by the user
 export default async function getReservations(
     params: IParams
 ) {
@@ -26,6 +27,7 @@ export default async function getReservations(
             query.listing = { userId: authorId };
         }
 
+        // return all reservations that fit within the given parameters above
         const reservations = await prisma.reservation.findMany({
             where: query,
             include: {
@@ -36,6 +38,7 @@ export default async function getReservations(
             }
         });
 
+        // sanatize reservations into strings        
         const safeReservations = reservations.map(
             (reservation) => ({
                 ...reservation,

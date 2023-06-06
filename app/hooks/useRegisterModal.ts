@@ -6,6 +6,7 @@ interface RegisterModalStore {
     onClose: () => void;
 }
 
+// Returns functions and state to toggle register modal
 const useRegisterModal = create<RegisterModalStore>((set) => ({
     isOpen: false,
     onOpen: () => set({ isOpen: true }),

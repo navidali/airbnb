@@ -7,6 +7,7 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter"
 
 import prisma from "@/app/libs/prismadb"
 
+// Login options - email/password, github, and google
 export const authOptions: AuthOptions = {
     adapter: PrismaAdapter(prisma),
     providers: [

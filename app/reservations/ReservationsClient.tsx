@@ -16,6 +16,7 @@ interface ReservationsClientProps {
     currentUser?: SafeUser | null,
 }
 
+// Reservations client, displays reservations made by other users on your properties
 const ReservationsClient: React.FC<ReservationsClientProps> = ({
     reservations,
     currentUser
@@ -23,6 +24,7 @@ const ReservationsClient: React.FC<ReservationsClientProps> = ({
     const router = useRouter();
     const [deletingId, setDeletingId] = useState('');
 
+    // Cancel reservation function to use with button
     const onCancel = useCallback((id: string) => {
         setDeletingId(id);
 
@@ -46,18 +48,7 @@ const ReservationsClient: React.FC<ReservationsClientProps> = ({
                 subtitle="Bookings on your properties"
             />
             <div
-                className="
-          mt-10
-          grid 
-          grid-cols-1 
-          sm:grid-cols-2 
-          md:grid-cols-3 
-          lg:grid-cols-4
-          xl:grid-cols-5
-          2xl:grid-cols-6
-          gap-8
-        "
-            >
+                className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
                 {reservations.map((reservation: any) => (
                     <ListingCard
                         key={reservation.id}

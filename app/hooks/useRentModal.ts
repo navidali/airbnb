@@ -6,6 +6,7 @@ interface RentModalStore {
     onClose: () => void;
 }
 
+// Returns functions and state to toggle rent modal
 const useRentModal = create<RentModalStore>((set) => ({
     isOpen: false,
     onOpen: () => set({ isOpen: true }),

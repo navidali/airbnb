@@ -4,12 +4,15 @@ interface IParams {
     listingId?: string;
 }
 
+// define prisma action to get specific listing by id.
 export default async function getListingById(
     params: IParams
 ) {
     try {
+        // get listingId from our route
         const { listingId } = params;
 
+        // get the specific listing and the the user
         const listing = await prisma.listing.findUnique({
             where: {
                 id: listingId,
@@ -23,6 +26,7 @@ export default async function getListingById(
             return null;
         }
 
+        // return Lisitng and User objects in to readable strings
         return {
             ...listing,
             createdAt: listing.createdAt.toString(),

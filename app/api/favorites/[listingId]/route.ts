@@ -7,6 +7,7 @@ interface IParams {
     listingId?: string;
 }
 
+// post route whenever someone likes a listing
 export async function POST(
     request: Request,
     { params }: { params: IParams }
@@ -39,6 +40,7 @@ export async function POST(
     return NextResponse.json(user);
 }
 
+// Delete route whenever someone unlikes a listing
 export async function DELETE(
     request: Request,
     { params }: { params: IParams }

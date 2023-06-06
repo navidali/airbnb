@@ -12,6 +12,7 @@ interface IParams {
     listingId?: string;
 }
 
+// Listings/[id]'s route, displays all listings and if there are none shows an empty message.
 const ListingPage = async ({ params }: { params: IParams }) => {
 
     const listing = await getListingById(params);

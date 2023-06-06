@@ -3,6 +3,7 @@ import bcrypt from "bcrypt";
 
 import prisma from "@/app/libs/prismadb";
 
+// Post route when creating registering a user
 export async function POST(
     request: Request,
 ) {
@@ -13,6 +14,7 @@ export async function POST(
         password,
     } = body;
 
+    // hash the given password with bcrypt
     const hashedPassword = await bcrypt.hash(password, 12);
 
     const user = await prisma.user.create({

@@ -16,6 +16,7 @@ interface TripsClientProps {
     currentUser?: SafeUser | null,
 }
 
+// Trips client, displays reservations made by the logged in user
 const TripsClient: React.FC<TripsClientProps> = ({
     reservations,
     currentUser
@@ -23,6 +24,7 @@ const TripsClient: React.FC<TripsClientProps> = ({
     const router = useRouter();
     const [deletingId, setDeletingId] = useState('');
 
+    // function to cancel reservation for the button
     const onCancel = useCallback((id: string) => {
         setDeletingId(id);
 
@@ -46,18 +48,7 @@ const TripsClient: React.FC<TripsClientProps> = ({
                 subtitle="Where you've been and where you're going"
             />
             <div
-                className="
-          mt-10
-          grid 
-          grid-cols-1 
-          sm:grid-cols-2 
-          md:grid-cols-3 
-          lg:grid-cols-4
-          xl:grid-cols-5
-          2xl:grid-cols-6
-          gap-8
-        "
-            >
+                className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
                 {reservations.map((reservation: any) => (
                     <ListingCard
                         key={reservation.id}

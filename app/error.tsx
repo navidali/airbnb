@@ -8,6 +8,7 @@ interface ErrorStateProps {
     error: Error
 }
 
+// Error message depicts empty page with a message
 const ErrorState: React.FC<ErrorStateProps> = ({ error }) => {
     useEffect(() => {
         console.error(error);

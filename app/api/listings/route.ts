@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prismadb";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 
+// Post route for adding new listings by the user
 export async function POST(
     request: Request,
 ) {
@@ -25,6 +26,7 @@ export async function POST(
         price,
     } = body;
 
+    // If any of the previous fields aren't passed return error
     Object.keys(body).forEach((value: any) => {
         if (!body[value]) {
             NextResponse.error();
