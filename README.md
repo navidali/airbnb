@@ -1,7 +1,7 @@
 # Airbnb Clone
 
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](public/images/sample-homepage.png?raw=true "App Screenshot")
 
 [Demo of the Airbnb-Clone](https://airbnb-nextjsproject.vercel.app/)
 
