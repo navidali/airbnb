@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Airbnb Clone
+
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+[Demo of the Airbnb-Clone](https://airbnb-nextjsproject.vercel.app/)
+
+This is a clone of the popular Airbnb website. While not a 1-to-1 replica, it captures much of the general functionality and provides a similar user experience to the original website.
+
+## Features
+
+- User authentication: Sign up, login, and logout functionality with optional Google and Github Auth for both guests and hosts.
+- Listings: View available listings with details like title, description, location, price.
+- Search: Search for listings based on location, date range, number of guests, and other filters.
+- Booking: Reserve a listing for a specific date range and number of guests.
+- Dashboard: Hosts can manage their listings and view bookings.
+
+## Tech Stack
+
+- **Next.js**: React framework for server-side rendering and building fast and scalable web applications.
+- **MongoDB**: NoSQL database for storing listing and user data.
+- **Prisma**: Modern ORM (Object-Relational Mapping) tool to interact with the database.
+- **Tailwind**: Utility-first CSS framework for building responsive and customizable UI components.
+- **Typescript**: Typed superset of JavaScript that enhances code maintainability and productivity.
+- **Vercel**: Cloud platform for deploying and hosting web applications with scalability and high performance.
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy of the project up and running, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Clone the repository:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   git clone https://github.com/navidali/airbnb.git
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Install dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+    cd airbnb
+    npm install
 
-## Learn More
+3. Set up the environment variables:
 
-To learn more about Next.js, take a look at the following resources:
+    Fill out the sample .env file in the root directory.
+    Define the necessary environment variables, such as database connection details, OAuth keys, etc.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Start the development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    ```bash
+    npm run dev
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Open your browser and navigate to http://localhost:3000 to see the application running locally.
